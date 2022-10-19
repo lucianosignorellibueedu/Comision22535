@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style  ></style>
+    <title>Ejemplos VueJs</title>
+    <!-- versión de desarrollo, incluye advertencias de ayuda en la consola -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1> {{ message }} </h1>
+        VUE fue desarrollado por: <span v-text="desarrollador"></span>
+en el año <span v-text="anio"></span>
+    </div>
+    <div id="curso">
+        <p>{{ mensaje }}</p>
+        <h2> {{ curso }} </h2>
+        <div v-html="titulo"></div>
+        <button v-on:click="counter += 1">Agregar 1</button>
+ <span> Clics: {{ counter }}</span>
+ <button v-on:click="counter -= 1">Quitar 1</button>
+       
+ <p><input v-model="mensaje"></p>
+    </div>
+    <div id="app-2" >
+        <span if="login" bind:title="message">
+            Mueva el mouse sobre mí durante unos segundos
+            para ver mi título enlazado dinámicamente.
+        </span>
+        <span else="login"> No tiene permisos</span>
+        <li v-for="x in frutas">
+            {{ x }}
+            </li>
+    </div>
+    
+</body>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hola Vue!',
+                desarrollador: 'Pedro You',
+                anio: 2014,
+            }
+        })
+        let app2 = new Vue({
+            el: '#app-2',
+            data: {
+                message: 'Usted cargó esta página el ' + new Date().toLocaleString(),
+                login: true,
+                frutas: ['naranja','banana', 'Naranja','durazno', ' ', ' ']
+            }
+        })
+        let curso = new Vue({
+            el: '#curso',
+            data: {
+                message: 'Hola Vue 3!',
+                curso: new Date().toLocaleString(),
+                titulo: `<h2>Hola <span
+    class="clase"> mundo</span></h2>`,
+        mensaje: 'Hola Codo a Codo!',
+        counter: 0
+            }
+        })
+    </script>
+</html>
+
