@@ -37,14 +37,16 @@
                 console.log(resPost);              //Mostramos el objeto (el post) completo
                 console.log(resPost.data.userId)   //Mostramos el userID, contenido en data.userId
 
-                const resUser = await axios(`https://jsonplaceholder.typicode.com/users/${resPost.data.userId}`)
+                const resUser = await axios(`https://jsonplaceholder.typicode.com/users/11`)
                 console.log(resUser)               //Mostramos el objeto (el usuario) completo
                 console.log(resUser.data.name)     //Mostramos el nombre del usuario, que está en data.name
             } catch (error) {
                 console.log('Ocurrió un error grave', error)
             }
         }
-        getNombre(99);  // El llamado a la función se hace de la forma habitual.
+        getNombre(99);
+        // getNombre(98);
+        // getNombre(97);  // El llamado a la función se hace de la forma habitual.
 
     </script>
 </body>
