@@ -4,7 +4,6 @@ class Persona:
     def inicializar(self,nom,edad):
         self.nombre = nom
         self.edad = edad
-    
     def imprimir(self):
         print("Nombre: " + self.nombre + " Edad: " + str(self.edad))
 

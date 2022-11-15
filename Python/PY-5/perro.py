@@ -1,20 +1,27 @@
-class Perro:
+class Animal:
     #atributos
-    genero= "Canino"
-    def __init__(self,nombre,edad):
+    
+    def __init__(self,nombre,edad,genero):
         self.nombre = nombre
         self.edad = edad
+        self.genero = genero
+
     #Metodos de instancia
-    def imprimir(self):
+    def __str__(self):
         print (f'{self.nombre} tiene {self.edad} años')
         # return f'{self.nombre} tiene {self.edad} años'
-    def ladrar(self,sonido):
+    def hablar(self,sonido):
         return f'{self.nombre} dice {sonido}'
     
-perro1 = Perro("Negro",2)
+perro1 = Animal("Negro",2,"Canino")
 perro1.imprimir()
-ladra = perro1.ladrar("Guuuaa")
+ladra = perro1.hablar("Guuuaa")
 print(ladra)
+
+gato1 = Animal("Michi",1,"Felino")
+maullido = gato1.hablar("miauuuuu")
+gato1.imprimir()
+print(maullido)
 
 
 
